@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IMPULSOWORK Training OTEC Limitada</title>
+  <meta name="description" content="SCI Certificaciones IMPULSOWORK Training OTEC Limitada. Capacitación minera especializada, formación técnica, seguridad operacional y certificación de competencias." />
+  <style>
+    :root{
+      --bg:#09111f;
+      --bg2:#101b31;
+      --card:#0f1a2d;
+      --text:#eef4ff;
+      --muted:#b6c3d9;
+      --gold:#d5a13a;
+      --gold2:#f1c86a;
+      --line:rgba(255,255,255,.08);
+      --shadow:0 16px 40px rgba(0,0,0,.28);
+      --radius:22px;
+      --max:1200px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,Segoe UI,Arial,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(213,161,58,.12), transparent 22%),
+        linear-gradient(180deg, #08111d 0%, #0e1728 52%, #0a1322 100%);
+      line-height:1.6;
+    }
+    a{color:inherit}
+    img{max-width:100%;display:block}
+    .container{width:min(var(--max), calc(100% - 32px)); margin:0 auto}
+    .pill{display:inline-flex; align-items:center; gap:10px; border:1px solid rgba(241,200,106,.28); background:rgba(213,161,58,.08); color:#ffe4a6; padding:10px 16px; border-radius:999px; font-size:14px}
+    header{
+      position:sticky; top:0; z-index:20;
+      backdrop-filter: blur(14px);
+      background:rgba(7,13,24,.78);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between; gap:16px; min-height:82px;
+    }
+    .brand{display:flex; align-items:center; gap:14px; text-decoration:none}
+    .brand img{width:62px; height:auto}
+    .brand-text{display:flex; flex-direction:column; line-height:1.15}
+    .brand-text strong{font-size:17px; letter-spacing:.3px}
+    .brand-text span{font-size:12px; color:var(--muted)}
+    nav ul{display:flex; gap:18px; list-style:none; margin:0; padding:0; flex-wrap:wrap}
+    nav a{text-decoration:none; color:var(--muted); font-size:14px}
+    nav a:hover{color:#fff}
+    .hero{
+      padding:70px 0 46px;
+      overflow:hidden;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:28px;
+      align-items:center;
+    }
+    h1{
+      margin:16px 0 14px;
+      font-size: clamp(34px, 5.8vw, 68px);
+      line-height:1.02;
+      letter-spacing:-1.6px;
+    }
+    .lead{
+      font-size:clamp(16px,2vw,20px);
+      color:var(--muted);
+      max-width:700px;
+      margin:0 0 24px;
+    }
+    .hero-actions{display:flex; gap:14px; flex-wrap:wrap; margin-top:24px}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      border-radius:14px; padding:14px 18px; text-decoration:none; font-weight:700;
+      border:1px solid transparent; transition:.2s ease;
+    }
+    .btn-primary{background:linear-gradient(135deg, var(--gold2), var(--gold)); color:#10131a; box-shadow:var(--shadow)}
+    .btn-primary:hover{transform:translateY(-1px)}
+    .btn-secondary{border-color:var(--line); background:rgba(255,255,255,.03); color:#fff}
+    .hero-card{
+      position:relative; border-radius:28px; overflow:hidden; min-height:520px;
+      box-shadow:var(--shadow);
+      background:#0d1728;
+      border:1px solid var(--line);
+    }
+    .hero-card img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
+    .hero-card::after{
+      content:"";
+      position:absolute; inset:0;
+      background:linear-gradient(180deg, rgba(9,17,31,.05) 0%, rgba(9,17,31,.2) 36%, rgba(9,17,31,.85) 100%);
+    }
+    .hero-badges{
+      position:absolute; left:18px; right:18px; bottom:18px; z-index:2;
+      display:grid; grid-template-columns:repeat(3,1fr); gap:12px;
+    }
+    .badge{
+      padding:14px; border-radius:18px; background:rgba(7,12,20,.78); border:1px solid rgba(255,255,255,.1)
+    }
+    .badge strong{display:block; font-size:18px; color:#fff}
+    .badge span{font-size:12px; color:#c8d4e6}
+    section{padding:34px 0}
+    .section-title{display:flex; align-items:end; justify-content:space-between; gap:18px; margin-bottom:18px}
+    .section-title h2{font-size:clamp(26px,3.4vw,42px); margin:0}
+    .section-title p{color:var(--muted); max-width:680px; margin:0}
+    .panel{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+      box-shadow:var(--shadow);
+    }
+    .about-grid, .value-grid, .speaker-grid, .contact-grid, .gallery-grid, .catalog-grid, .summary-grid{
+      display:grid; gap:18px;
+    }
+    .summary-grid{grid-template-columns:repeat(4,1fr)}
+    .summary-card{
+      padding:22px; border-radius:20px; border:1px solid var(--line); background:rgba(255,255,255,.03)
+    }
+    .summary-card strong{font-size:30px; display:block; line-height:1; margin-bottom:8px}
+    .summary-card span{color:var(--muted); font-size:14px}
+    .about-grid{grid-template-columns:1.15fr .85fr}
+    .content-card{padding:28px}
+    .content-card h3{margin-top:0; font-size:24px}
+    .content-card p{color:var(--muted)}
+    .mini-list{display:grid; gap:10px; margin-top:18px}
+    .mini-item{padding:14px 16px; border-radius:16px; background:rgba(255,255,255,.03); border:1px solid var(--line)}
+    .value-grid{grid-template-columns:repeat(3,1fr)}
+    .value-card{padding:24px}
+    .value-card h3{margin:0 0 8px}
+    .value-card p{margin:0; color:var(--muted)}
+    .catalog-grid{grid-template-columns:repeat(3,1fr)}
+    .catalog-card{padding:22px}
+    .catalog-card h3{margin:0 0 12px}
+    .course-list{display:grid; gap:16px; margin-top:18px}
+    .course{
+      padding:22px;
+      border-radius:20px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.025);
+    }
+    .course-head{
+      display:flex; align-items:start; justify-content:space-between; gap:18px; margin-bottom:12px;
+    }
+    .course h3{margin:0; font-size:22px}
+    .tag{display:inline-block; padding:8px 12px; border-radius:999px; font-size:12px; background:rgba(213,161,58,.12); border:1px solid rgba(213,161,58,.3); color:#ffe4a6}
+    .meta{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:14px 0 0}
+    .meta div{padding:12px; border-radius:14px; background:rgba(255,255,255,.03); border:1px solid var(--line)}
+    .meta strong{display:block; font-size:12px; letter-spacing:.5px; text-transform:uppercase; color:#ffe4a6}
+    .meta span{font-size:14px; color:var(--muted)}
+    .cta-band{
+      display:flex; justify-content:space-between; gap:18px; align-items:center; padding:24px 26px; margin-top:22px
+    }
+    .cta-band p{margin:0; color:var(--muted)}
+    .gallery-grid{grid-template-columns:repeat(4,1fr)}
+    .gallery-item{
+      position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:1px solid var(--line); background:#07101d
+    }
+    .gallery-item img{width:100%; height:100%; object-fit:cover; transition:transform .35s ease}
+    .gallery-item:hover img{transform:scale(1.04)}
+    .gallery-item span{
+      position:absolute; left:12px; right:12px; bottom:12px; z-index:2;
+      padding:10px 12px; border-radius:12px; font-size:12px;
+      background:rgba(6,10,18,.72); border:1px solid rgba(255,255,255,.1)
+    }
+    .gallery-item::after{
+      content:""; position:absolute; inset:0;
+      background:linear-gradient(180deg, rgba(0,0,0,0) 36%, rgba(0,0,0,.65) 100%);
+    }
+    .speaker-grid{grid-template-columns:repeat(2,1fr)}
+    .speaker{padding:26px}
+    .speaker h3{margin:0 0 4px}
+    .speaker .role{color:#ffe4a6; font-weight:700; margin-bottom:10px}
+    .speaker p{color:var(--muted); margin:0}
+    .contact-grid{grid-template-columns:1fr .9fr}
+    .contact-card{padding:28px}
+    .contact-list{display:grid; gap:12px; margin-top:16px}
+    .contact-item{padding:14px 16px; border-radius:14px; border:1px solid var(--line); background:rgba(255,255,255,.03)}
+    .contact-item strong{display:block; color:#ffe4a6}
+    .form{display:grid; gap:12px}
+    .field{display:grid; gap:6px}
+    input, textarea{
+      width:100%; border-radius:14px; border:1px solid var(--line); background:#0b1424; color:#fff;
+      padding:14px 14px; font:inherit;
+    }
+    textarea{min-height:130px; resize:vertical}
+    .note{font-size:12px; color:var(--muted)}
+    .docs{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
+    footer{padding:28px 0 40px; color:var(--muted)}
+    .footer-box{
+      display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap;
+      padding-top:22px; border-top:1px solid var(--line)
+    }
+    @media (max-width: 980px){
+      .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
+      .summary-grid{grid-template-columns:repeat(2,1fr)}
+      .value-grid,.catalog-grid,.gallery-grid,.speaker-grid{grid-template-columns:repeat(2,1fr)}
+      .hero-card{min-height:430px}
+    }
+    @media (max-width: 640px){
+      .nav{min-height:72px}
+      nav{display:none}
+      .summary-grid,.value-grid,.catalog-grid,.gallery-grid,.speaker-grid{grid-template-columns:1fr}
+      .meta{grid-template-columns:1fr}
+      .hero-badges{grid-template-columns:1fr}
+      .section-title{align-items:start; flex-direction:column}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#inicio">
+        <img src="assets/logo.png" alt="Logo IMPULSOWORK Training" />
+        <div class="brand-text">
+          <strong>IMPULSOWORK Training</strong>
+          <span>SCI Certificaciones OTEC Limitada</span>
+        </div>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#quienes-somos">Quiénes somos</a></li>
+          <li><a href="#cursos">Cursos</a></li>
+          <li><a href="#oferta">Oferta formativa</a></li>
+          <li><a href="#galeria">Galería</a></li>
+          <li><a href="#relatores">Relatores</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inicio" class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="pill">Capacitación minera especializada · Seguridad · Operación · Certificación</span>
+        <h1>Formación técnica y operacional para minería e industria.</h1>
+        <p class="lead">IMPULSOWORK Training OTEC desarrolla programas orientados a mejorar seguridad, productividad, disciplina operacional y desempeño en terreno, con un enfoque práctico, técnico y medible.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contacto">Solicitar información</a>
+          <a class="btn btn-secondary" href="#galeria">Ver experiencia en terreno</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="assets/galeria_4.jpg" alt="Capacitación minera en terreno" />
+        <div class="hero-badges">
+          <div class="badge"><strong>SCI</strong><span>Certificación visible y respaldo documental</span></div>
+          <div class="badge"><strong>Minería</strong><span>Programas enfocados en operación real</span></div>
+          <div class="badge"><strong>Terreno</strong><span>Metodologías prácticas y aplicables</span></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <section>
+    <div class="container summary-grid">
+      <div class="summary-card"><strong>6+</strong><span>Programas base de capacitación técnica y operacional</span></div>
+      <div class="summary-card"><strong>120 h</strong><span>Diplomado en operación y mantenimiento de equipos mineros</span></div>
+      <div class="summary-card"><strong>2</strong><span>Relatores principales con trayectoria técnica en minería</span></div>
+      <div class="summary-card"><strong>OTEC</strong><span>Enfoque corporativo, técnico y orientado a resultados</span></div>
+    </div>
+  </section>
+
+  <section id="quienes-somos">
+    <div class="container">
+      <div class="section-title">
+        <h2>Quiénes somos</h2>
+        <p>SCI Certificaciones IMPULSOWORK Training OTEC desarrolla programas de capacitación técnica para minería subterránea y operaciones orientadas a mejorar productividad, seguridad y desempeño operacional.</p>
+      </div>
+      <div class="about-grid">
+        <div class="panel content-card">
+          <h3>Origen, experiencia y enfoque</h3>
+          <p>La organización se proyecta como una OTEC especializada en formación y certificación de competencias operacionales en minería e industria. Su propuesta combina experiencia de sus fundadores, instrucción técnica, aplicación en terreno y mejora continua para entregar capacitación útil, medible y alineada con la operación real.</p>
+          <div class="mini-list">
+            <div class="mini-item"><strong>Visión</strong><br>Formar y certificar competencias operacionales en área minera e industrial mediante programas de alto estándar, enfocados en seguridad, eficiencia operacional y continuidad productiva.</div>
+            <div class="mini-item"><strong>Misión</strong><br>Ser reconocidos como una organización líder en formación y certificación técnica, destacando por la calidad de sus programas, innovación metodológica e impacto real en terreno.</div>
+            <div class="mini-item"><strong>Propuesta de valor</strong><br>IMPULSOWORK Training no solo capacita; genera impacto operacional medible, reduciendo errores humanos, optimizando el uso de equipos y mejorando indicadores productivos.</div>
+          </div>
+        </div>
+        <div class="panel content-card">
+          <h3>Metodología de trabajo</h3>
+          <p>Los programas consideran diagnóstico de necesidades, diseño del plan formativo, ejecución en aula o terreno, evaluación y seguimiento, incorporando apoyo técnico y experiencias de operación real.</p>
+          <div class="mini-list">
+            <div class="mini-item">Diagnóstico de necesidades</div>
+            <div class="mini-item">Diseño del programa</div>
+            <div class="mini-item">Ejecución en aula y/o terreno</div>
+            <div class="mini-item">Evaluación y seguimiento</div>
+            <div class="mini-item">Apoyo técnico y simulación</div>
+          </div>
+          <div class="docs">
+            <a class="btn btn-secondary" href="SCI_IMPULSOWORK_OTEC_brochure.pdf" target="_blank">Ver brochure</a>
+            <a class="btn btn-secondary" href="F-079 S2976-2026.pdf" target="_blank">Ver certificado SCI</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="oferta">
+    <div class="container">
+      <div class="section-title">
+        <h2>Oferta formativa</h2>
+        <p>Programas orientados a seguridad operacional, operación de equipos y perforación especializada, con una mirada práctica y aplicable al contexto minero e industrial.</p>
+      </div>
+      <div class="catalog-grid">
+        <div class="panel catalog-card">
+          <h3>Seguridad operacional</h3>
+          <p>Programas orientados a control de riesgos, control crítico y disciplina operacional.</p>
+        </div>
+        <div class="panel catalog-card">
+          <h3>Operación de equipos</h3>
+          <p>Capacitación enfocada en control, navegación, buenas prácticas y operación en terreno.</p>
+        </div>
+        <div class="panel catalog-card">
+          <h3>Perforación especializada</h3>
+          <p>Cursos diseñados para mejorar precisión, metodología, dirección y calidad de ejecución.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cursos">
+    <div class="container">
+      <div class="section-title">
+        <h2>Cursos y diplomado</h2>
+        <p>Cada programa presenta objetivo, público objetivo, duración, modalidad y categoría, permitiendo una presentación clara para clientes potenciales y procesos comerciales.</p>
+      </div>
+
+      <div class="course-list">
+        <article class="course panel">
+          <div class="course-head">
+            <div>
+              <h3>Operación Segura de Equipos Mineros</h3>
+              <p>Desarrollar competencias en la operación segura de equipos, considerando controles críticos, riesgos operacionales y buenas prácticas en terreno.</p>
+            </div>
+            <span class="tag">Técnico · Seguridad Operacional</span>
+          </div>
+          <div class="meta">
+            <div><strong>Dirigido a</strong><span>Operadores de equipos mineros, personal de apoyo y supervisores.</span></div>
+            <div><strong>Duración</strong><span>16 horas</span></div>
+            <div><strong>Modalidad</strong><span>Presencial / En terreno</span></div>
+          </div>
+        </article>
+
+        <article class="course panel">
+          <div class="course-head">
+            <div>
+              <h3>Uso de Escolta y Control de Acceso</h3>
+              <p>Fortalecer el cumplimiento de protocolos de segregación hombre-máquina y uso de escolta como control crítico preventivo.</p>
+            </div>
+            <span class="tag">Seguridad · Control Crítico</span>
+          </div>
+          <div class="meta">
+            <div><strong>Dirigido a</strong><span>Operadores, conductores, personal de tránsito interno y supervisores.</span></div>
+            <div><strong>Duración</strong><span>8 horas</span></div>
+            <div><strong>Modalidad</strong><span>Presencial / Teórico-práctico / Online</span></div>
+          </div>
+        </article>
+
+        <article class="course panel">
+          <div class="course-head">
+            <div>
+              <h3>Segregación de Áreas de Trabajo</h3>
+              <p>Capacitar en la correcta delimitación y control de zonas de trabajo para prevenir incidentes entre personas y equipos.</p>
+            </div>
+            <span class="tag">Seguridad · Operacional</span>
+          </div>
+          <div class="meta">
+            <div><strong>Dirigido a</strong><span>Operadores, jefes de turno y APR.</span></div>
+            <div><strong>Duración</strong><span>8 horas</span></div>
+            <div><strong>Modalidad</strong><span>Presencial</span></div>
+          </div>
+        </article>
+
+        <article class="course panel">
+          <div class="course-head">
+            <div>
+              <h3>Navegación y Operación de Jumbo</h3>
+              <p>Optimizar la operación de equipos Jumbo, mejorando precisión, tiempos de perforación y control de desviaciones.</p>
+            </div>
+            <span class="tag">Técnico · Perforación</span>
+          </div>
+          <div class="meta">
+            <div><strong>Dirigido a</strong><span>Operadores de Jumbo (Boomer, Simba u otros).</span></div>
+            <div><strong>Duración</strong><span>24 horas</span></div>
+            <div><strong>Modalidad</strong><span>Presencial / En terreno</span></div>
+          </div>
+        </article>
+
+        <article class="course panel">
+          <div class="course-head">
+            <div>
+              <h3>Control de Divergencias en Perforación</h3>
+              <p>Reducir desviaciones en perforación mediante técnicas de control direccional y buenas prácticas operacionales.</p>
+            </div>
+            <span class="tag">Técnico · Producción</span>
+          </div>
+          <div class="meta">
+            <div><strong>Dirigido a</strong><span>Operadores de perforación y supervisores.</span></div>
+            <div><strong>Duración</strong><span>16 horas</span></div>
+            <div><strong>Modalidad</strong><span>Presencial</span></div>
+          </div>
+        </article>
+
+        <article class="course panel">
+          <div class="course-head">
+            <div>
+              <h3>Sistemas de Supresión Contra Incendios</h3>
+              <p>Capacitar en el uso, inspección y control de sistemas de supresión en equipos mineros.</p>
+            </div>
+            <span class="tag">Seguridad · Equipos</span>
+          </div>
+          <div class="meta">
+            <div><strong>Dirigido a</strong><span>Operadores, mantenedores y supervisores.</span></div>
+            <div><strong>Duración</strong><span>8 horas</span></div>
+            <div><strong>Modalidad</strong><span>Presencial</span></div>
+          </div>
+        </article>
+
+        <article class="course panel">
+          <div class="course-head">
+            <div>
+              <h3>Diplomado en Operación y Mantenimiento de Equipos Mineros</h3>
+              <p>Desarrollar competencias integrales en operación, diagnóstico y cuidado de equipos mineros, orientadas a la reducción de fallas y mejora de la productividad.</p>
+            </div>
+            <span class="tag">Diplomado · Mixto</span>
+          </div>
+          <div class="meta">
+            <div><strong>Dirigido a</strong><span>Operadores, mantenedores y personal técnico.</span></div>
+            <div><strong>Duración</strong><span>120 horas</span></div>
+            <div><strong>Modalidad</strong><span>Mixta (teórico + práctico en terreno)</span></div>
+          </div>
+        </article>
+      </div>
+
+      <div class="panel cta-band">
+        <div>
+          <strong>¿Interesado en una propuesta técnica y económica?</strong>
+          </div>
+        <a class="btn btn-primary" href="#contacto">Sí, quiero aprender</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="galeria">
+    <div class="container">
+      <div class="section-title">
+        <h2>Galería real de capacitación y operación</h2>      
+      </div>
+      <div class="gallery-grid">
+        <figure class="gallery-item"><img src="assets/galeria_1.jpg" alt="Inspección y capacitación en equipo Epiroc"><span>Inspección y actividad técnica en equipo minero</span></figure>
+        <figure class="gallery-item"><img src="assets/galeria_2.jpg" alt="Cabina de operación y monitoreo"><span>Operación y monitoreo en cabina</span></figure>
+        <figure class="gallery-item"><img src="assets/galeria_3.jpg" alt="Operación de jumbo en interior mina"><span>Práctica operativa con jumbo</span></figure>
+        <figure class="gallery-item"><img src="assets/galeria_4.jpg" alt="Capacitación grupal en terreno"><span>Capacitación en terreno y seguridad operacional</span></figure>
+        <figure class="gallery-item"><img src="assets/galeria_5.jpg" alt="Equipo minero en interior mina"><span>Operación en interior mina</span></figure>
+        <figure class="gallery-item"><img src="assets/galeria_6.jpg" alt="Equipo jumbo en faena"><span>Faena subterránea y ejecución real</span></figure>
+        <figure class="gallery-item"><img src="assets/galeria_7.jpg" alt="Jumbo en interior mina con presencia de agua"><span>Condiciones reales de trabajo en mina</span></figure>
+        <figure class="gallery-item"><img src="assets/galeria_8.jpg" alt="Equipo y participantes en patio de entrenamiento"><span>Formación técnica y trabajo colaborativo</span></figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="relatores">
+    <div class="container">
+      <div class="section-title">
+        <h2>Relatores</h2>
+        <p>Nuestros relatores cuentan con experiencia técnica y formativa en sus respectivas áreas, aportando valor real mediante conocimiento, trayectoria y enfoque práctico.</p>
+      </div>
+      <div class="speaker-grid">
+        <article class="panel speaker">
+          <h3>Bernardo Ojeda</h3>
+          <div class="role">Gerente técnico de operaciones</div>
+          <p>Ingeniero Civil Industrial e Ingeniero en Minas con más de 22 años de experiencia dedicados a la operación de equipos y la instrucción de personal en minería subterránea, incluyendo frentes con riesgos sísmicos. Destaca por su trayectoria técnica, metodológica y de liderazgo en el uso efectivo de equipos mecanizados.</p>
+        </article>
+        <article class="panel speaker">
+          <h3>Pablo Tamayo Álvarez</h3>
+          <div class="role">Asesor técnico en operación</div>
+          <p>Instructor Senior en operación de equipos con sistemas RCS5, RCS4, FAN II y FAN III, con más de 20 años dedicado a la operación y formación de operadores de equipos de perforación en minería subterránea. Su experiencia contribuye al uso eficiente, seguro y tecnológicamente actualizado de los equipos.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <div class="container">
+      <div class="section-title">
+        <h2>Contacto</h2>        
+      </div>
+      <div class="contact-grid">
+        <div class="panel contact-card">
+          <h3>Datos de contacto</h3>
+          <div class="contact-list">
+            <div class="contact-item"><strong>Dirección</strong>Calle Almarza N° 339, comuna de Rancagua, Región del Libertador Bernardo O’Higgins.</div>
+            <div class="contact-item"><strong>Teléfono</strong>+56 9 8196 6787</div>
+            <div class="contact-item"><strong>Email</strong>bernardo.ojedam@gmail.com</div>
+            <div class="contact-item"><strong>Teléfono</strong>+56 9 7899 0156</div>
+            <div class="contact-item"><strong>Email</strong>minerotamayo1@gmail.com</div>
+            <div class="contact-item"><strong>Horario sugerido</strong>Lunes a viernes · Atención comercial y técnica a coordinar.</div>
+          </div>
+        </div>
+         <div class="contacto-form-panel">
+        <form class="contacto-form">
+          <div class="campo">
+            <label for="nombre">Nombre</label>
+            <input id="nombre" type="text" placeholder="Ingresa tu nombre">
+          </div>
+
+          <div class="campo">
+            <label for="correo">Correo electrónico</label>
+            <input id="correo" type="email" placeholder="nombre@empresa.cl">
+          </div>
+
+          <div class="campo">
+            <label for="empresa">Empresa / faena</label>
+            <input id="empresa" type="text" placeholder="Empresa o proyecto">
+          </div>
+
+          <div class="campo">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" placeholder="Cuéntanos qué capacitación o servicio necesitas"></textarea>
+          </div>
+
+          <button type="submit" class="btn-contacto">Enviar consulta</button>
+
+          <p class="nota-contacto">            
+          </p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+CSS
+
+  <footer>
+    <div class="container footer-box">
+      <div>© IMPULSOWORK Training OTEC Limitada · Sitio corporativo demostrativo.</div>     
+    </div>
+  </footer>
+</body>
+</html>
